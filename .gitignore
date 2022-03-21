@@ -11,6 +11,8 @@ package-lock.json
 .log 
 .lock
 .tmp
+build/release
+coverage
 
 # Ignore generated TS files.
 
