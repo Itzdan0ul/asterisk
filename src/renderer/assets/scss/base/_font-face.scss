@@ -1,1 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../../../fonts/static/Manrope-ExtraLight.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-Light.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-Regular.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-Medium.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-Bold.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-SemiBold.ttf') format('truetype'),
+      url('../../../../fonts/static/Manrope-ExtraBold.ttf') format('truetype')
+}
