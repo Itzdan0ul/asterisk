@@ -1,0 +1,17 @@
+@use '../abstracts/functions' as *;
+
+body {
+  background: theme-style('light', 'bg-color');
+  color: theme-style('light', 'fg-color');
+  font-family: 'Manrope';
+  font-size: 16px;
+  transition: .2s ease;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: theme-style('dark', 'bg-color');
+    color: theme-style('dark', 'fg-color');
+  }
+}
