@@ -1,4 +1,4 @@
-[Representative banner of the application](/resources/password-mini_banner.png)
+![Representative banner of the application](/resources/password-mini_banner.png)
 
 ## About
 <p align="justify">
@@ -15,7 +15,7 @@ One PC.
 
 ## Screenshots
 <p align="center">
-  <img src="/resources/password-mini.gif"  alt="Gif showing how the application works" width="364" height="315">
+  <img src="/resources/password-mini.gif"  alt="Gif showing how the application works" width="365" height="350">
 </p>
 
 
