@@ -91,7 +91,7 @@
       "verifyUpdateCodeSignature": false
     },
     "portable": {
-      "artifactName": "$password-mini.${ext}"
+      "artifactName": "password-mini.${ext}"
     },
     "linux": {
       "target": [
