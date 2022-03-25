@@ -3,7 +3,7 @@ body {
   color: #333;
   font-family: "Manrope";
   font-size: 16px;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
   overflow: hidden;
 }
 
@@ -15,7 +15,45 @@ body {
 }
 @font-face {
   font-family: "Manrope";
-  src: url("../../../../fonts/static/Manrope-ExtraLight.ttf") format("truetype"), url("../../../../fonts/static/Manrope-Light.ttf") format("truetype"), url("../../../../fonts/static/Manrope-Regular.ttf") format("truetype"), url("../../../../fonts/static/Manrope-Medium.ttf") format("truetype"), url("../../../../fonts/static/Manrope-Bold.ttf") format("truetype"), url("../../../../fonts/static/Manrope-SemiBold.ttf") format("truetype"), url("../../../../fonts/static/Manrope-ExtraBold.ttf") format("truetype");
+  src: url("../../../../fonts/static/Manrope-ExtraLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("../../../../fonts/static/Manrope-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
 }
 .btn {
   cursor: pointer;
@@ -191,8 +229,8 @@ body {
   border-radius: 100%;
   cursor: default;
   display: flex;
-  justify-content: center;
   height: 0.625rem;
+  justify-content: center;
   width: 0.625rem;
 }
 .main__radio span svg {
@@ -238,14 +276,14 @@ body {
 }
 .main__checkbox > .checked-checkbox {
   background: #F87777 url("../svg/checked.svg") center 0.9375em;
-  transition: 0.3s ease-in;
+  transition: 0.3 ease-in;
 }
 
 .main__input--checkbox {
   background: #E4E4E4;
   border-radius: 0.1875em;
   height: 0.9375em;
-  transition: 0.3s ease-out;
+  transition: 0.3 ease-out;
   width: 0.9375em;
 }
 
@@ -291,11 +329,11 @@ body {
 }
 
 .main__btn--generate {
-  background: #EA6464;
+  background: #BA4747;
   border-radius: 0.625rem;
   color: #FFF;
   font-size: 0.6875em;
-  font-weight: 700;
+  font-weight: 600;
   height: 1.25rem;
   margin: 0.625rem;
   width: 5rem;
@@ -337,7 +375,7 @@ body {
   }
 
   .main__btn--generate {
-    background: #E9BD67;
+    background: #BB7D04;
   }
 }
 
