@@ -1,6 +1,6 @@
 {
   "name": "password-mini",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
   "main": "src/index.js",
   "scripts": {
@@ -8,13 +8,11 @@
     "dev": "cross-env NODE_ENV=development electron src",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
     "tsc": "tsc --project ./",
     "webpack": "webpack",
     "rebuild": "electron-rebuild",
     "pack": "electron-builder --dir",
-    "build": "electron-builder",
-    "postinstall": "install-app-deps"
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -36,7 +34,6 @@
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
-    "@types/config": "^0.0.41",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@vue/compiler-sfc": "^3.2.31",
@@ -44,7 +41,6 @@
     "cross-env": "^7.0.3",
     "electron": "^17.1.2",
     "electron-builder": "^22.14.13",
-    "electron-rebuild": "^3.2.7",
     "jest": "^27.5.1",
     "vue": "^3.2.31",
     "vue-loader": "^17.0.0",
