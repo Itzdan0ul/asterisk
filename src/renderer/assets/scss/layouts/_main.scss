@@ -67,6 +67,7 @@
   span {
     font-size: 0.875em;
     font-weight: 800;
+
   }
 }
 
@@ -106,8 +107,9 @@
     border-radius: 100%;
     cursor: default;
     display: flex;
-    justify-content: center;
     height: 0.625rem;
+    justify-content: center;
+
     width: 0.625rem;
     svg {
       height: 0.625rem;
@@ -154,7 +156,7 @@
   & > {
     .checked-checkbox {
       background: theme-style('light', 'bg-component') url('../svg/checked.svg') center  0.9375em;
-      transition: .3s ease-in;
+      transition: .3 ease-in;
     }
   }
 }
@@ -163,7 +165,7 @@
   background: #E4E4E4;
   border-radius: 0.1875em;
   height: 0.9375em;
-  transition: .3s ease-out;
+  transition: .3 ease-out;
   width: 0.9375em;
 }
 
@@ -209,11 +211,11 @@
 }
 
 .main__btn--generate {
-  background: #EA6464;
+  background: #BA4747;
   border-radius: 0.625rem;
   color: theme-style('dark', 'fg-color');;
   font-size: 0.6875em;
-  font-weight: 700;
+  font-weight: 600;
   height: 1.25rem;
   margin: 0.625rem;
   width: 5rem;
@@ -263,6 +265,6 @@
   }
 
   .main__btn--generate {
-    background: #E9BD67;
+    background: #BB7D04;
   }
 }
