@@ -6,26 +6,34 @@ describe('Password', () => {
     expect(length).toBe(15)
   })
   it('Should be undefined when the length is zero.', () => {
-    const actual: string = PasswordBuilder.getPassword('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 0)
-    expect(actual).toBeUndefined()
+    const password: string = PasswordBuilder.getPassword('ABCDEFGHIJKLMNOPQRSTUVWXYZ', 0)
+    expect(password).toBeUndefined()
+  })
+  test('Should be true if it includes �.', () => {
+    const password: string = PasswordBuilder.getPassword('v🤮mk�👽😍qu�🥺kuj👽��jmg�😍n👻🥺kvw��i', 18)
+    expect(password.includes('�')).toBeTruthy()
+  })
+  it('Should return the string without �.', () => {
+    const password: string = 'v🤮mk�👽😍qu�🥺kuj👽��jmg�😍n👻🥺kvw��i'
+    expect(password.replace(/\uFFFD/g, '')).toEqual('v🤮mk👽😍qu🥺kuj👽jmg😍n👻🥺kvwi')
   })
 })
 
 describe('Characters', () => {
   it('Should return a string of lowercase and uppercase characters concatenated.', () => {
-    const actual: string = PasswordBuilder.getChar(['all-radio'], ['uppercase', 'lowercase'])
-    expect(actual).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
+    const characters: string = PasswordBuilder.getChar(['all-radio'], ['uppercase', 'lowercase'])
+    expect(characters).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
   })
   it('Should return an empty string if the chars option is not selected.', () => {
-    const actual: string = PasswordBuilder.getChar(['all-radio'], [])
-    expect(actual).toBe('')
+    const characters: string = PasswordBuilder.getChar(['all-radio'], [])
+    expect(characters).toBe('')
   })
   it('Should return a character string of numbers without 0 and 1.', () => {
-    const actual: string = PasswordBuilder.getChar(['read-radio'], ['numbers'])
-    expect(actual).toBe('23456789')
+    const characters: string = PasswordBuilder.getChar(['read-radio'], ['numbers'])
+    expect(characters).toBe('23456789')
   })
   it('Should return a string of emojis.', () => {
-    const actual: string = PasswordBuilder.getChar(['all-radio'], ['emoji'])
-    expect(actual).toBe('😀😍🙁👽🖕🥵🥺🤮')
+    const characters: string = PasswordBuilder.getChar(['all-radio'], ['emoji'])
+    expect(characters).toBe('👻👽🖕🥵🥺🤮😍🙁')
   })
 })
