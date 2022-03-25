@@ -7,9 +7,11 @@ class PasswordBuilder {
 
     if (length === 0) return undefined
 
+    if (characters === '') return undefined
+
     for (let i = 0; i < length; i++) {
-      unitedChar += characters
-        .charAt(Math.floor(Math.random() * characters.length))
+      unitedChar += String.fromCodePoint(characters
+        .codePointAt(Math.floor(Math.random() * characters.length)))
     }
 
     return unitedChar
@@ -34,7 +36,6 @@ class PasswordBuilder {
       } else {
         characters = characters.concat(Character.uppercase)
       }
-      
     }
 
     if (charOption.includes('lowercase')) {
