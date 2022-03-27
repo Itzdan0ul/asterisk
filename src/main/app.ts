@@ -1,14 +1,16 @@
 import os from 'os'
 import path from 'path'
 import createMenu from './menu'
+import { Platform } from './platform'
 import { setColorScheme } from './theme'
 import { BrowserWindow, app } from 'electron'
 
 export default function createWindow(): void {
+	const platform: Platform = new Platform(os.platform())
 	const win: BrowserWindow = new BrowserWindow({
 		show: false,
 		center: true,
-		height: 364,
+		height: platform.setWindowHeight(),
 		width: 350,
 		maximizable: false,
 		resizable: false,
@@ -22,9 +24,9 @@ export default function createWindow(): void {
 		win.webContents.openDevTools()
 	}
 
-	if (os.platform() == 'win32') {
+	if (platform._platform == 'win32') {
 		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.ico'))
-	} else if (os.platform() == 'linux') {
+	} else if (platform._platform == 'linux') {
 		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.png'))
 	}
 

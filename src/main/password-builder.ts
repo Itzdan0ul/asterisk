@@ -6,14 +6,13 @@ class PasswordBuilder {
     let unitedChar: string = ''
 
     if (length === 0) return undefined
-
     if (characters === '') return undefined
 
     for (let i = 0; i < length; i++) {
       unitedChar += String.fromCodePoint(characters
         .codePointAt(Math.floor(Math.random() * characters.length)))
     }
-
+    
     return unitedChar
   }
 
@@ -54,10 +53,16 @@ class PasswordBuilder {
         characters = characters.concat(Character.numbers)
       }
     }
+
+    if (charOption.includes('emoji')) { 
+      Character.emoji.forEach(code => {
+        const unicode: number = parseInt('0x' + code)
+        characters = characters.concat(String.fromCodePoint(unicode))
+      })
+    }
     
     if (charOption.includes('symbols')) characters = characters.concat(Character.symbols)
     if (charOption.includes('ascii')) characters = characters.concat(Character.ascii)
-    if (charOption.includes('emoji')) characters = characters.concat(Character.emoji)
 
     return characters
   }
