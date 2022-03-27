@@ -2,7 +2,7 @@
   <div class="main__range-option">
     <div class="main__range">
       <span>Password length: {{ count }}</span>
-      <input id="input-range" class="input range main__input--range" type="range" min="1" max="50" step="1" v-model="range" @change="onGetPassword()">
+      <input id="input-range" class="input range main__input--range" type="range" min="1" max="50" step="1" v-model="range" @change="generatePassword()">
     </div>
   </div>
 </template>
@@ -14,17 +14,24 @@
   export default {
     name: 'Range',
     methods: {
-      onGetPassword() {
+      generatePassword() {
         const payload = {
           radioGroup: [...this.radioGroup],
           checkboxGroup: [...this.checkboxGroup],
           count: parseInt(this.count)
         }
         
+        if (this.checkboxGroup.length > 0) {
+          console.log('Mo?')
+          this.setLevel(payload)
+        } else {
+          payload.count = 0
+          this.setLevel(payload)
+        }
+
         this.getPassword(payload)
-        this.sempahore(payload)
       },
-      ...mapMutations('semaphore', { sempahore: 'SET_LEVEL' }),
+      ...mapMutations('semaphore', { setLevel: 'SET_LEVEL' }),
       ...mapActions('passwordBuilder', ['getPassword'])
     },
     computed: {

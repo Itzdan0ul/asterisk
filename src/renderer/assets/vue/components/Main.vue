@@ -39,9 +39,15 @@
           checkboxGroup: [...this.checkboxGroup],
           count: parseInt(this.count)
         }
-        
+
+        if (this.checkboxGroup.length > 0) {
+          this.setLevel(payload)
+        } else {
+          payload.count = 0
+          this.setLevel(payload)
+        }
+
         this.getPassword(payload)
-        this.setLevel(payload)
       },
       ...mapMutations('semaphore', { setLevel: 'SET_LEVEL' }),
       ...mapActions('passwordBuilder', ['getPassword'])

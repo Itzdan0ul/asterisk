@@ -2,8 +2,8 @@
   <div class="layout">
     <Main />
     <Transition name="snackbar-transition" 
-      enter-active-class="animate__animated animate__bounceIn"
-      leave-active-class="animate__animated animate__bounceOut"
+      enter-active-class="animate__animated animate__flash"
+      leave-active-class="animate__animated animate__fadeOut"
       @enter="enter">
       <Snackbar v-show="show"/>
     </Transition>
