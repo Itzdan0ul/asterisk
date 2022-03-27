@@ -22,7 +22,6 @@
         }
         
         if (this.checkboxGroup.length > 0) {
-          console.log('Mo?')
           this.setLevel(payload)
         } else {
           payload.count = 0

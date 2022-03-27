@@ -15,7 +15,7 @@ describe('Platform', () => {
         expect(height).toBe(364)
         break;
       case 'linux':
-        expect(height).toBeNull()
+        expect(height).toBe(340)
         break
     }
   })
