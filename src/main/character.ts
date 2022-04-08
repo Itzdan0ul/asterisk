@@ -7,4 +7,4 @@ class Character {
   static get emoji(): string[] { return ['1F47B', '1F47D', '1F595', '1F975', '1F97A', '1F92E', '1F60D', '1F641'] }
 }
 
-export default Character
+export { Character }

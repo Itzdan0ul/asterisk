@@ -44,20 +44,20 @@ export default function createMenu(): void {
 }
 
 const reportAnIrregularity = (): void => {
-  const url: string = 'https://github.com/Itzdan0ul/password-mini/issues'
+  const url: string = 'https://github.com/Itzdan0ul/asterisk/issues'
   shell.openExternal(url) 
 }
 
 const displayAppInfo = async (): Promise<void> => {
   try {
-    const res = await fetch('https://api.github.com/repos/Itzdan0ul/password-mini/releases')
+    const res = await fetch('https://api.github.com/repos/Itzdan0ul/asterisk/releases')
     const data = await res.json()
 
     let message: string = ''
     const name: string = app.getName()
     const version: string = data[0].name
     const platform: string = os.version()
-    const github: string = 'https://github.com/Itzdan0ul/password-mini'
+    const github: string = 'https://github.com/Itzdan0ul/asterisk'
   
     if (version == app.getVersion()) {
       message = `${name}\nRelease: ${version}\nLicense: MIT\nPlatform: ${platform}\nGithub: ${github}`
@@ -65,8 +65,8 @@ const displayAppInfo = async (): Promise<void> => {
       message = `This version of Password Mini is unattended, please download the latest version at: ${github}/releases`
     }
   
-    dialog.showMessageBox(null, {
-      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.png')).resize({ width: 68, height: 68 }),
+    dialog.showMessageBox({
+      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png')).resize({ width: 68, height: 68 }),
       title: 'About',
       message,
       defaultId: 0,
@@ -75,8 +75,8 @@ const displayAppInfo = async (): Promise<void> => {
       if (result.response == 0) shell.openExternal(`${github}/releases`) 
     })
   } catch {
-    dialog.showMessageBoxSync(null, {
-      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.png')).resize({ width: 68, height: 68 }),
+    dialog.showMessageBoxSync({
+      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png')).resize({ width: 68, height: 68 }),
       title: 'About',
       message: app.getName(),
       buttons: ['It\'s ok.']

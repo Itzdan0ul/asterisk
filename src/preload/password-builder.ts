@@ -1,5 +1,5 @@
 import { ipcMain } from 'electron';
-import PasswordBuilder from '../main/password-builder'
+import { PasswordBuilder } from '../main/password-builder'
 
 ipcMain.handle('main:password-builder', async (event: Electron.IpcMainInvokeEvent, args: any) => {
   switch (args[0]) {
@@ -12,7 +12,7 @@ ipcMain.handle('main:password-builder', async (event: Electron.IpcMainInvokeEven
 const getPasswordHandler = (event: Electron.IpcMainInvokeEvent, payload: any): void => {
   const { checkboxGroup, count, radioGroup } = payload
   const chars: string = PasswordBuilder.generate(radioGroup, checkboxGroup)
-  const password: string = PasswordBuilder.getPassword(chars, count)
+  const password: string = <string> PasswordBuilder.getPassword(chars, count)
 
   event.sender.send('renderer:password-builder', password)
 }
