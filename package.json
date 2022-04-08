@@ -1,6 +1,6 @@
 {
   "name": "asterisk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
   "main": "src/index.js",
   "scripts": {
@@ -90,7 +90,6 @@
       "target": [
         "appImage"
       ],
-      "maintainer ": "Itzdan0ul",
       "executableArgs": ["asterisk"],
       "icon": "build/images/asterisk.icns",
       "category": "utils"
