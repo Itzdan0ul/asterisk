@@ -1,18 +1,18 @@
-import Character from './character'
+import { Character } from './character'
 
 class PasswordBuilder {
   
-  public static getPassword(characters: string, length: number): string {
+  public static getPassword(characters: string, length: number): string | undefined {
     let unitedChar: string = ''
 
     if (length === 0) return undefined
     if (characters === '') return undefined
 
     for (let i = 0; i < length; i++) {
-      unitedChar += String.fromCodePoint(characters
-        .codePointAt(Math.floor(Math.random() * characters.length)))
+      unitedChar += String.fromCodePoint(
+        characters.codePointAt(Math.floor(Math.random() * characters.length))!)
     }
-    
+
     return unitedChar
   }
 
@@ -30,7 +30,7 @@ class PasswordBuilder {
     let characters: string = ''
 
     if (charOption.includes('uppercase')) {
-      if (radioGroup.includes('read-radio')) {
+      if (radioGroup.includes('easy to read')) {
         characters = characters.concat(Character.uppercase.replace('O', ''))
       } else {
         characters = characters.concat(Character.uppercase)
@@ -38,7 +38,7 @@ class PasswordBuilder {
     }
 
     if (charOption.includes('lowercase')) {
-      if (radioGroup.includes('read-radio')) {
+      if (radioGroup.includes('easy to read')) {
         characters = characters.concat(Character.lowercase.replace('l', ''))
       } else {
         characters = characters.concat(Character.lowercase)
@@ -46,7 +46,7 @@ class PasswordBuilder {
     }
 
     if (charOption.includes('numbers')) {
-      if (radioGroup.includes('read-radio')) {
+      if (radioGroup.includes('easy to read')) {
         const newValue = Character.numbers.replaceAll(/[10]/g, '')
         characters = characters.concat(newValue)
       } else {
@@ -68,4 +68,4 @@ class PasswordBuilder {
   }
 }
 
-export default PasswordBuilder
+export { PasswordBuilder }

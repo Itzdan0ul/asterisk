@@ -7,6 +7,7 @@ import { BrowserWindow, app } from 'electron'
 
 export default function createWindow(): void {
 	const platform: Platform = new Platform(os.platform())
+
 	const win: BrowserWindow = new BrowserWindow({
 		show: false,
 		center: true,
@@ -24,10 +25,10 @@ export default function createWindow(): void {
 		win.webContents.openDevTools()
 	}
 
-	if (platform._platform == 'win32') {
-		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.ico'))
-	} else if (platform._platform == 'linux') {
-		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'password-mini.png'))
+	if (platform._name == 'win32') {
+		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.ico'))
+	} else if (platform._name == 'linux') {
+		win.setIcon(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png'))
 	}
 
 	win.once('ready-to-show', () => {

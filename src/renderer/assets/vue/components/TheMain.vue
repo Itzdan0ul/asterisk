@@ -25,7 +25,7 @@
   import { mapState, mapMutations, mapActions } from 'vuex'
 
   export default {
-    name: 'Main',
+    name: 'TheMain',
     components: {
       Range,
       PasswordBox,

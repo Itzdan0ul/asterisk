@@ -1,14 +1,14 @@
 class Platform {
-  private platform: string;
+  private name: string;
 
-  public get _platform(): string { return this.platform }
+  public get _name(): string { return this.name }
 
-  constructor(platform: NodeJS.Platform) {
-    this.platform = platform
+  constructor(name: NodeJS.Platform) {
+    this.name = name
   }
 
-  public setWindowHeight(): number {
-    switch (this.platform) {
+  public setWindowHeight(): number | undefined {
+    switch (this.name) {
       case 'win32':
         return 364
       case 'linux':

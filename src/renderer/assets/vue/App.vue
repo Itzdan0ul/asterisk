@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Main />
+    <TheMain />
     <Transition name="snackbar-transition" 
       enter-active-class="animate__animated animate__flash"
       leave-active-class="animate__animated animate__fadeOut"
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-  import Main from './components/Main.vue'
+  import TheMain from './components/TheMain.vue'
   import Snackbar from './components/Snackbar.vue'
   import { mapState, mapMutations } from 'vuex'
 
   export default {
     name: 'App',
     components: {
-      Main,
+      TheMain,
       Snackbar
     },
     methods: {

@@ -1,4 +1,4 @@
-import PasswordBuilder from '../../../src/main/password-builder'
+import { PasswordBuilder } from '../../../src/main/password-builder'
 
 describe('Password', () => {
   it('Should return the length of the assigned password.', () => {
@@ -21,19 +21,19 @@ describe('Password', () => {
 
 describe('Characters', () => {
   it('Should return a string of lowercase and uppercase characters concatenated.', () => {
-    const characters: string = PasswordBuilder.getChar(['all-radio'], ['uppercase', 'lowercase'])
+    const characters: string = PasswordBuilder.getChar(['all characters'], ['uppercase', 'lowercase'])
     expect(characters).toBe('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
   })
   it('Should return an empty string if the chars option is not selected.', () => {
-    const characters: string = PasswordBuilder.getChar(['all-radio'], [])
+    const characters: string = PasswordBuilder.getChar(['all characters'], [])
     expect(characters).toBe('')
   })
   it('Should return a character string of numbers without 0 and 1.', () => {
-    const characters: string = PasswordBuilder.getChar(['read-radio'], ['numbers'])
+    const characters: string = PasswordBuilder.getChar(['easy to read'], ['numbers'])
     expect(characters).toBe('23456789')
   })
   it('Should return a string of emojis.', () => {
-    const characters: string = PasswordBuilder.getChar(['all-radio'], ['emoji'])
+    const characters: string = PasswordBuilder.getChar(['all characters'], ['emoji'])
     expect(characters).toBe('👻👽🖕🥵🥺🤮😍🙁')
   })
 })

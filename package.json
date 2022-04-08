@@ -1,5 +1,5 @@
 {
-  "name": "password-mini",
+  "name": "asterisk",
   "version": "0.1.1",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
   "main": "src/index.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Itzdan0ul/password-mini.git"
+    "url": "git+https://github.com/Itzdan0ul/asterisk.git"
   },
   "keywords": [
     "electronjs",
@@ -27,9 +27,13 @@
   "author": "Itzdan0ul",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Itzdan0ul/password-mini/issues"
+    "url": "https://github.com/Itzdan0ul/asterisk/issues"
   },
-  "homepage": "https://github.com/Itzdan0ul/password-mini#readme",
+  "homepage": "https://github.com/Itzdan0ul/asterisk#readme",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.7"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@babel/preset-env": "^7.16.11",
@@ -49,8 +53,8 @@
     "webpack-cli": "^4.9.2"
   },
   "build": {
-    "appId": "com.itzdan0ul.passwordmini",
-    "productName": "Password Mini",
+    "appId": "com.itzdan0ul.asterisk",
+    "productName": "Asterisk",
     "copyright": "Copyright © 2022 Itzdan0ul",
     "directories": {
       "output": "build/release"
@@ -75,34 +79,25 @@
       "!babel.config.js"
     ],
     "win": {
-      "icon": "build/images/password-mini.ico",
-      "target": [
-        {
-          "target": "portable",
-          "arch": [
-            "x64"
-          ]
-        }
-      ],
+      "icon": "build/images/asterisk.ico",
+      "target": ["portable"],
       "verifyUpdateCodeSignature": false
     },
     "portable": {
-      "artifactName": "password-mini.${ext}"
+      "artifactName": "asterisk.${ext}"
     },
     "linux": {
       "target": [
         "appImage"
       ],
-      "executableName": "password-mini",
-      "icon": "build/images/password-mini.icns",
+      "maintainer ": "Itzdan0ul",
+      "executableArgs": ["asterisk"],
+      "icon": "build/images/asterisk.icns",
       "category": "utils"
     },
     "appImage": {
+      "artifactName": "asterisk",
       "license": "LICENSE"
     }
-  },
-  "dependencies": {
-    "@types/node-fetch": "^2.6.1",
-    "node-fetch": "^2.6.7"
   }
 }
