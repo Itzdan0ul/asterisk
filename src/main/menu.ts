@@ -53,33 +53,42 @@ const displayAppInfo = async (): Promise<void> => {
     const res = await fetch('https://api.github.com/repos/Itzdan0ul/asterisk/releases')
     const data = await res.json()
 
-    let message: string = ''
-    const name: string = app.getName()
-    const version: string = data[0].name
-    const platform: string = os.version()
-    const github: string = 'https://github.com/Itzdan0ul/asterisk'
-  
-    if (version == app.getVersion()) {
-      message = `${name}\nRelease: ${version}\nLicense: MIT\nPlatform: ${platform}\nGithub: ${github}`
-    } else {
-      message = `This version of Password Mini is unattended, please download the latest version at: ${github}/releases`
+    let options: {} = {
+      message: '',
+      name: app.getName(),
+      version: data[0].name,
+      platform: os.version(),
+      github: 'https://github.com/Itzdan0ul/asterisk'
     }
-  
-    dialog.showMessageBox({
-      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png')).resize({ width: 68, height: 68 }),
-      title: 'About',
-      message,
-      defaultId: 0,
-      buttons: ['Download', 'It\'s ok.', ]
-    }).then(result => {
-      if (result.response == 0) shell.openExternal(`${github}/releases`) 
-    })
+
+    messageBox(options)
   } catch {
-    dialog.showMessageBoxSync({
-      icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png')).resize({ width: 68, height: 68 }),
-      title: 'About',
-      message: app.getName(),
-      buttons: ['It\'s ok.']
-    })
+    let options: {} = {
+      message: '',
+      name: app.getName(),
+      version: app.getVersion(),
+      platform: os.version(),
+      github: 'https://github.com/Itzdan0ul/asterisk'
+    }
+
+    messageBox(options)
   }
+}
+
+function messageBox(options: any): void {
+  let { message, name, version, platform, github } = options
+  const isTheCurrentVersion: boolean = version === app.getVersion()
+
+  if (isTheCurrentVersion) message = `${name}\nRelease: ${version}\nLicense: MIT\nPlatform: ${platform}\nGithub: ${github}`
+  else message = `This version of Asterisk is unattended, please download the latest version at: ${github}/releases`
+
+  dialog.showMessageBox({
+    icon: nativeImage.createFromPath(path.join(__dirname, '../renderer', 'assets', 'images', 'asterisk.png')).resize({ width: 68, height: 68 }),
+    title: 'About',
+    message,
+    defaultId: 1,
+    buttons: isTheCurrentVersion ? ['Ok'] : ['Ok', 'Download']
+  }).then(result => {
+    if (result.response == 1) shell.openExternal(`${github}/releases`) 
+  })
 }
