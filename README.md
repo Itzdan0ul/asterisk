@@ -8,11 +8,7 @@
 
 ## Compile
 
-The application was made with TypeScript and Vue, so we recommend you follow the guide below:
-
-### Transpiling TS files
-
-`npm run tsc`
+The application was made with Vue, so we recommend you follow the guide below:
 
 ### Webpack
 
