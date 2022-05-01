@@ -1,4 +1,4 @@
 'use strict'
 
-import '../bundle/dist/bundle.js'
+import '../bundle/dist/bundle.js';
 	

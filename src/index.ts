@@ -1,12 +1,12 @@
-import './preload'
+import '@src/preload';
 
 import { app } from 'electron'
-import createWindow from './main/app'
+import { init } from '@src/main';
 
 app.whenReady()
   .then(() => {
-    createWindow()
+    init();
   })
-  .catch(() => {
-    throw new Error('An error occurred while running the application.')
-  })
+  .catch(reason => {
+    throw new Error(reason);
+  });

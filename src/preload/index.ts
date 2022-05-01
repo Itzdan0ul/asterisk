@@ -1,1 +1,1 @@
-import './password-builder'
+import './password-builder';

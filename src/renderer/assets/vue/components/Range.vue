@@ -8,8 +8,8 @@
 </template>
 
 <script>
-  import { store } from '../store/index.js'
-  import { mapState, mapMutations, mapActions } from 'vuex'
+  import { store } from '../store/index.js';
+  import { mapState, mapMutations, mapActions } from 'vuex';
 
   export default {
     name: 'Range',
@@ -22,21 +22,21 @@
         }
         
         if (this.checkboxGroup.length > 0) {
-          this.setLevel(payload)
+          this.setLevel(payload);
         } else {
-          payload.count = 0
-          this.setLevel(payload)
+          payload.count = 0;
+          this.setLevel(payload);
         }
 
-        this.getPassword(payload)
+        this.getPassword(payload);
       },
       ...mapMutations('semaphore', { setLevel: 'SET_LEVEL' }),
       ...mapActions('passwordBuilder', ['getPassword'])
     },
     computed: {
       range: {
-        get() { return this.count },
-        set(value) { store.commit('range/SET_RANGE', value) }
+        get() { return this.count; },
+        set(value) { store.commit('range/SET_RANGE', value); }
       },
       ...mapState('range', ['count']),
       ...mapState('radio', ['radioGroup']),

@@ -11,15 +11,24 @@
 </template>
 
 <script>
-  import TheMain from './components/TheMain.vue'
-  import Snackbar from './components/Snackbar.vue'
-  import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex';
+  import TheMain from './components/TheMain.vue';
+  import Snackbar from './components/Snackbar.vue';
 
   export default {
     name: 'App',
     components: {
       TheMain,
       Snackbar
+    },
+    mounted() {
+      if (localStorage.key(0) === null) {
+        const config = {
+          colorScheme: 'light'
+        }
+
+        localStorage.setItem('config', JSON.stringify(config));
+      }
     },
     methods: {
       enter() { setTimeout(() => this.toggleSnackbar(false), 3500) },

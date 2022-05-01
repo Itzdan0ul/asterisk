@@ -13,23 +13,21 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
-  import Semaphore from './Semaphore.vue'
+import Semaphore from './Semaphore.vue';
+  import { mapState, mapMutations } from 'vuex';
 
   export default {
-    name: 'TextPassword',
-    components: {
-      Semaphore
-    },
+    name: 'PasswordBox',
+    components: { Semaphore },
     methods: {
       copyToClipboard() {
         const passwordBox = document.getElementById('password-box')
 
         if (passwordBox.value != '') {
-          const show = true
+          const show = true;
           
-          this.toggleSnackbar(show)
-          navigator.clipboard.writeText(passwordBox.value)
+          this.toggleSnackbar(show);
+          navigator.clipboard.writeText(passwordBox.value);
         }
       },
       ...mapMutations('snackbar', { toggleSnackbar: 'TOGGLE_SNACKBAR' })

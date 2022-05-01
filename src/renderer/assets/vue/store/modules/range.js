@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import { SET_RANGE } from '../mutation-types.js'
+import { SET_RANGE } from '../mutation-types.js';
 
 const range = {
   namespaced: true,
@@ -11,12 +11,12 @@ const range = {
   },
   mutations: {
     [SET_RANGE] (state, value) {
-      const inputRange = document.getElementById("input-range")
-      inputRange.style.setProperty("--value", (value * 2))
+      const inputRange = document.getElementById("input-range");
+      inputRange.style.setProperty("--value", (value * 2));
       
-      state.count = value
+      state.count = value;
     }
-  },
+  }
 }
 
-export { range }
+export { range };

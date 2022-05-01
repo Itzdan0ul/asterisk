@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-import { CHANGE_CHECKBOX_STATE } from '../mutation-types.js'
+import { CHANGE_CHECKBOX_STATE } from '../mutation-types.js';
 
 const checkbox = {
   namespaced: true,
@@ -16,15 +16,15 @@ const checkbox = {
   },
   mutations: {
     [CHANGE_CHECKBOX_STATE] (state, checkboxButton) {
-      const unchecked = state.checkboxGroup.includes(checkboxButton)
+      const unchecked = state.checkboxGroup.includes(checkboxButton);
       if (unchecked) {
-        const index = state.checkboxGroup.indexOf(checkboxButton)
-        state.checkboxGroup.splice(index, 1)
+        const index = state.checkboxGroup.indexOf(checkboxButton);
+        state.checkboxGroup.splice(index, 1);
       } else {
-        state.checkboxGroup.push(checkboxButton)
+        state.checkboxGroup.push(checkboxButton);
       }
     }
   }
 }
 
-export { checkbox }
+export { checkbox };

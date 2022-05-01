@@ -18,11 +18,11 @@
 </template>
 
 <script>
-  import Range from './Range.vue'
-  import RadioGroup from './RadioGroup.vue'
-  import PasswordBox from './PasswordBox.vue'
-  import CheckboxGroup from './CheckBoxGroup.vue'
-  import { mapState, mapMutations, mapActions } from 'vuex'
+  import Range from './Range.vue';
+  import RadioGroup from './RadioGroup.vue';
+  import PasswordBox from './PasswordBox.vue';
+  import CheckboxGroup from './CheckBoxGroup.vue';
+  import { mapState, mapMutations, mapActions } from 'vuex';
 
   export default {
     name: 'TheMain',
@@ -41,13 +41,13 @@
         }
 
         if (this.checkboxGroup.length > 0) {
-          this.setLevel(payload)
+          this.setLevel(payload);
         } else {
-          payload.count = 0
-          this.setLevel(payload)
+          payload.count = 0;
+          this.setLevel(payload);
         }
 
-        this.getPassword(payload)
+        this.getPassword(payload);
       },
       ...mapMutations('semaphore', { setLevel: 'SET_LEVEL' }),
       ...mapActions('passwordBuilder', ['getPassword'])

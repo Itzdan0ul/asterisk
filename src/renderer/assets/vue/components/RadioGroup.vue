@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Radio from './Radio.vue'
+  import Radio from './Radio.vue';
   
   export default {
     name: 'RadioGroup',
