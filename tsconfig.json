@@ -1,7 +1,8 @@
 {
   "include": [
 		"src/**/*.ts",
-		"scripts/**/*.ts"
+		"scripts/**/*.ts",
+		"test/**/*.test.ts"
   ],
   "exclude": ["node_modules"],
 	"compilerOptions": {
@@ -9,10 +10,19 @@
 		"noImplicitAny": true,
     "module": "CommonJS",
     "target": "ES2022",
-    "allowJs": true,
+    "allowJs": false,
 		"allowSyntheticDefaultImports": true,
     "moduleResolution": "Node",
 		"esModuleInterop": true,
-		"strict": true
+		"strict": true,
+		"baseUrl": ".",
+		"paths": {
+			"@src/*": [
+				"src/*"
+			]
+		}
+	},
+	"ts-node": {
+		"require": ["tsconfig-paths/register"]
 	}
 }
