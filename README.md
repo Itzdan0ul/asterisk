@@ -10,13 +10,18 @@
 
 The application was made with TypeScript and Vue, so we recommend you follow the guide below:
 
-### Transpiling TS files
+### Transpiling TS files (TypeScript required)
 
 `npm run tsc`
 
 ### Webpack
 
 `npm run webpack`
+
+### Production
+
+- Uncomment the CSP tag of the HTML.
+- Change the mode to "production" in the `webpack.config.js` file.
 
 ### Production
 
@@ -34,6 +39,6 @@ The application was made with TypeScript and Vue, so we recommend you follow the
   <img src="/resources/asterisk.gif"  alt="Gif showing how the application works" width="365" height="350">
 </p>
 
-## Lincense
+## License
 
 MIT

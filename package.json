@@ -1,6 +1,6 @@
 {
   "name": "asterisk",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
   "main": "src/index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Itzdan0ul/asterisk#readme",
   "dependencies": {
-    "@types/node-fetch": "^2.6.1",
+    "module-alias": "^2.2.2",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
@@ -39,7 +39,9 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
+    "@types/module-alias": "^2.0.1",
     "@types/node": "^17.0.21",
+    "@types/node-fetch": "^2.6.1",
     "@vue/compiler-sfc": "^3.2.31",
     "babel-jest": "^27.5.1",
     "cross-env": "^7.0.3",
@@ -68,19 +70,23 @@
       "!**/renderer/**/*.scss",
       "!**/renderer/**/*.vue",
       "!.vscode",
-      "!src/**/*.ts",
       "!.github",
       "!README.md",
       "!SECURITY.md",
       "!webpack.config.js",
-      "!tsconfig.json",
       "!test",
+      "!scripts",
       "!resources",
-      "!babel.config.js"
+      "!babel.config.js",
+      "!tsconfig.json",
+      "!jest.config.js",
+      "!src/**/*.ts"
     ],
     "win": {
       "icon": "build/images/asterisk.ico",
-      "target": ["portable"],
+      "target": [
+        "portable"
+      ],
       "verifyUpdateCodeSignature": false
     },
     "portable": {
@@ -90,7 +96,9 @@
       "target": [
         "appImage"
       ],
-      "executableArgs": ["asterisk"],
+      "executableArgs": [
+        "asterisk"
+      ],
       "icon": "build/images/asterisk.icns",
       "category": "utils"
     },
