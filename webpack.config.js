@@ -3,9 +3,9 @@ const { DefinePlugin } = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'renderer', 'assets', 'bundle', 'index.js'),
+  entry: path.join(__dirname, 'src', 'renderer', 'javascript', 'bundle', 'index.js'),
 	output: {
-		path: path.join(__dirname, 'src', 'renderer', 'assets', 'bundle', 'dist'),
+		path: path.join(__dirname, 'src', 'renderer', 'javascript', 'bundle', 'dist'),
 		filename: 'bundle.js'
 	},
 	mode: 'development',
@@ -16,6 +16,11 @@ module.exports = {
 	},
   resolve: {
     extensions: ['.js'],
+		alias: {
+			'@renderer': path.join(__dirname, 'src/renderer/'),
+			'@assets': path.join(__dirname, 'src/renderer/assets'),
+			'@components': path.join(__dirname, 'src/renderer/vue/components')
+		}
   },
 	plugins: [
 		new VueLoaderPlugin(),

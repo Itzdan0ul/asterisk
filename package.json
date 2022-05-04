@@ -2,12 +2,13 @@
   "name": "asterisk",
   "version": "0.1.3",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
-  "main": "src/index.ts",
+  "main": "src/index.js",
   "scripts": {
-    "start": "electron -r ts-node/register src",
-    "dev": "cross-env NODE_ENV=development electron -r ts-node/register src",
+    "start": "electron src",
+    "dev": "cross-env NODE_ENV=development electron src",
     "test": "jest",
     "test:watch": "jest --watch",
+    "tsc": "tsc --project ./",
     "webpack": "webpack",
     "rebuild": "electron-rebuild",
     "pack": "electron-builder --dir",
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/Itzdan0ul/asterisk#readme",
   "dependencies": {
+    "module-alias": "^2.2.2",
     "node-fetch": "^2.6.7"
   },
   "devDependencies": {
@@ -37,6 +39,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.1",
+    "@types/module-alias": "^2.0.1",
     "@types/node": "^17.0.21",
     "@types/node-fetch": "^2.6.1",
     "@vue/compiler-sfc": "^3.2.31",
@@ -45,8 +48,6 @@
     "electron": "^17.1.2",
     "electron-builder": "^22.14.13",
     "jest": "^27.5.1",
-    "ts-node": "^10.7.0",
-    "tsconfig-paths": "^3.14.1",
     "vue": "^3.2.31",
     "vue-loader": "^17.0.0",
     "vuex": "^4.0.2",
@@ -69,15 +70,17 @@
       "!**/renderer/**/*.scss",
       "!**/renderer/**/*.vue",
       "!.vscode",
-      "!src/**/*.ts",
       "!.github",
       "!README.md",
       "!SECURITY.md",
       "!webpack.config.js",
-      "!tsconfig.json",
       "!test",
+      "!scripts",
       "!resources",
-      "!babel.config.js"
+      "!babel.config.js",
+      "!tsconfig.json",
+      "!jest.config.js",
+      "!src/**/*.ts"
     ],
     "win": {
       "icon": "build/images/asterisk.ico",

@@ -26,4 +26,3 @@ scripts/*.js
 # It does not ignore the .js files in the renderer folder, Typescript was not used there.
 
 !**/renderer/**/*.js
-!src/**/preload.js

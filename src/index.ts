@@ -1,3 +1,5 @@
+import './lib/custom-paths';
+
 import '@src/preload';
 
 import { app } from 'electron'

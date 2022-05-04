@@ -1,5 +1,5 @@
 import { ipcMain } from 'electron';
-import { PasswordBuilder } from '@src/main/logic/password-builder';
+import { PasswordBuilder } from '@src/main/logic/PasswordBuilder';
 
 ipcMain.handle('main:password-builder', async (event: Electron.IpcMainInvokeEvent, args: any) => {
   switch (args[0]) {

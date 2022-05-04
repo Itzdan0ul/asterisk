@@ -1,5 +1,5 @@
-import { Window } from '@src/main/window/window';
+import { MainWindow } from '@src/main/window/MainWindow';
 
-const init = (): void => new Window().createWindow();
+const init = () => new MainWindow().createWindow();
 
-export { init };
+export { init }

@@ -1,4 +1,4 @@
-import { PasswordBuilder } from '@src/main/logic/password-builder';
+import { PasswordBuilder } from '@src/main/logic/PasswordBuilder';
 
 describe('Password', () => {
   it('Should return the length of the assigned password.', () => {
