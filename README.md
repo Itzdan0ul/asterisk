@@ -1,11 +1,5 @@
 ![Representative banner of the application](/resources/asterisk_banner.png)
 
-# About archiving 📦
-
-<p align="justify">
-  I have decided to migrate the project from Electron to Tauri, due to the advantages offered by the latter regarding the size of the application. Since it is a portable app, the final size that it ends up with when compiled with Electron is not what I am looking for.
-</p>
-
 ## About
 
 <p align="justify">
