@@ -1,4 +1,4 @@
-![Representative banner of the application](/resources/asterisk_banner.png)
+![Representative banner of the application](.github/resources/banner.png)
 
 ## About
 
@@ -12,31 +12,26 @@ The application was made with TypeScript and Vue, so we recommend you follow the
 
 ### Transpiling TS files (TypeScript required)
 
-`npm run tsc`
+`npm run tsc` or `yarn run tsc`
 
-### Webpack
+### Vite
 
-`npm run webpack`
+`npm run vite` or `yarn run vite`
 
-### Production
+## Production
 
-- Uncomment the CSP tag of the HTML.
-- Change the mode to "production" in the `webpack.config.js` file.
-
-### Production
-
-- Uncomment the CSP tag of the HTML.
-- Change the mode to "production" in the `webpack.config.js` file.
+- Change the mode to "production" in the `vite.config.js` file.
 
 ## Features
 
 - Simple and straightforward.
-- Compatible with Windows (7, 8, 10..., and maybe 11) and Linux.
+- Compatible with Windows (7, 8, 10) and Linux.
+- Multi-language: en-US and es-419.
 
 ## Screenshots
 
 <p align="center">
-  <img src="/resources/asterisk.gif"  alt="Gif showing how the application works" width="365" height="350">
+  <img src=".github/resources/asterisk.gif"  alt="Gif showing how the application works" width="524" height="405">
 </p>
 
 ## License
