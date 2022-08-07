@@ -1,14 +1,21 @@
-import './lib/custom-paths';
+import './helpers/custom-paths';
 
 import '@src/preload';
 
-import { app } from 'electron'
-import { init } from '@src/main';
+import { app } from 'electron';
+import App from '@main/window/App';
 
-app.whenReady()
+app
+  .whenReady()
   .then(() => {
-    init();
+    new App();
   })
-  .catch(reason => {
+  .catch((reason) => {
     throw new Error(reason);
   });
+
+app.disableHardwareAcceleration();
+
+app.on('web-contents-created', (_, contents) => {
+  contents.on('will-navigate', event => event.preventDefault());
+});
