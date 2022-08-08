@@ -1,18 +1,29 @@
 import { ipcMain } from 'electron';
-import { PasswordBuilder } from '@src/main/logic/PasswordBuilder';
+import Emoji from '@src/main/application/char/Emoji';
+import PasswordBuilder from '@main/application/PasswordBuilder';
+import CharacterStringBuilder from '@src/main/application/char/CharacterStringBuilder';
 
-ipcMain.handle('main:password-builder', async (event: Electron.IpcMainInvokeEvent, args: any) => {
-  switch (args[0]) {
-    case 'GET_PASSWORD':
-      getPasswordHandler(event, args[1]);
-      break
+ipcMain.handle(
+  'main:password-builder',
+  async (event: Electron.IpcMainInvokeEvent, args: any) => {
+    switch (args[0]) {
+      case 'BUILD_PASSWORD':
+        event.sender.send(
+          'renderer:password-builder:build-password',
+          buildPassword(args[1])
+        );
+        break;
     }
-});
+  }
+);
 
-const getPasswordHandler = (event: Electron.IpcMainInvokeEvent, payload: any): void => {
-  const { checkboxGroup, count, radioGroup } = payload;
-  const chars: string = PasswordBuilder.generate(radioGroup, checkboxGroup);
-  const password: string = <string> PasswordBuilder.getPassword(chars, count);
+function buildPassword({ range, checkboxes, radios }: any): string {
+  const characters = new CharacterStringBuilder(
+    radios,
+    checkboxes
+  ).makeStringCharacters();
 
-  event.sender.send('renderer:password-builder', password);
+  if (checkboxes.includes('Emojis')) return new Emoji().randomEmoji(range);
+
+  return new PasswordBuilder(characters, range).buildPassword();
 }
