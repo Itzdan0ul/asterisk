@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.range {
+  appearance: none;
+  background: $range-empty;
+  background-image: linear-gradient(
+    to right,
+    $range-fill calc(var(--value) * 1%),
+    $range-empty 0
+  );
+  border-radius: 0.625em;
+  height: 0.9375rem;
+  width: 17.9375rem;
+}

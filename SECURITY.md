@@ -4,8 +4,9 @@
 
 | Version  | Supported          |
 | -------- | ------------------ |
-| 0.1.3    | :white_check_mark: |
+| 1.0.0    | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-https://github.com/Itzdan0ul/asterisk/issues or  itzdan.ul@tutanota.com
+https://github.com/Itzdan0ul/asterisk/issues
+

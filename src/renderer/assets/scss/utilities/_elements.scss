@@ -1,0 +1,52 @@
+// Menu
+
+.menu__button {
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}
+
+.menu__button--help {
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+}
+
+// Select
+
+.select-locale {
+  svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+}
+
+// Password Box
+
+.password-box__button {
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .password-box__button {
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+// Radio
+
+.radio__info {
+  svg {
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+}

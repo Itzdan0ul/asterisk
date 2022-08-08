@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.radio {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+}
+
+.radio__circle {
+  background: $radio-unchecked-bg;
+  border-radius: 6.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.radio__circle--checked {
+  background: $asterisk;
+  border: 2px solid $radio-checked-border;
+}
+
+.radio__text {
+  cursor: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  user-select: none;
+}

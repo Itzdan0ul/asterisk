@@ -1,6 +1,6 @@
 {
   "name": "asterisk",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Beautiful desktop application for your pocket to generate passwords.",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "tsc": "tsc --project ./",
-    "webpack": "webpack",
+    "vite": "vite build && node ./scripts/afterBundling.js",
     "rebuild": "electron-rebuild",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -22,7 +22,8 @@
     "electronjs",
     "password",
     "generator",
-    "desktop"
+    "desktop",
+    "password-generator"
   ],
   "author": "Itzdan0ul",
   "license": "MIT",
@@ -31,28 +32,27 @@
   },
   "homepage": "https://github.com/Itzdan0ul/asterisk#readme",
   "dependencies": {
+    "fs-extra": "^10.1.0",
     "module-alias": "^2.2.2",
-    "node-fetch": "^2.6.7"
+    "vue-inline-svg": "^3.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
-    "@types/jest": "^27.4.1",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^28.1.3",
     "@types/module-alias": "^2.0.1",
-    "@types/node": "^17.0.21",
-    "@types/node-fetch": "^2.6.1",
-    "@vue/compiler-sfc": "^3.2.31",
-    "babel-jest": "^27.5.1",
+    "@types/node": "^18.0.0",
+    "@vitejs/plugin-vue": "^3.0.1",
+    "babel-jest": "^28.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^17.1.2",
-    "electron-builder": "^22.14.13",
-    "jest": "^27.5.1",
-    "vue": "^3.2.31",
-    "vue-loader": "^17.0.0",
-    "vuex": "^4.0.2",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "electron": "^20.0.1",
+    "electron-builder": "^23.3.3",
+    "jest": "^28.1.3",
+    "vite": "^3.0.4",
+    "vue": "^3.2.37",
+    "vuex": "^4.0.2"
   },
   "build": {
     "appId": "com.itzdan0ul.asterisk",
@@ -63,27 +63,35 @@
     },
     "compression": "maximum",
     "asar": true,
-    "npmRebuild": false,
-    "buildDependenciesFromSource": false,
+    "npmRebuild": true,
     "afterPack": "scripts/afterPack.js",
     "files": [
       "!**/renderer/**/*.scss",
       "!**/renderer/**/*.vue",
+      "!**/renderer/common",
+      "!**/renderer/assets",
+      "!**/renderer/assets",
+      "!**/renderer/store",
+      "!**/renderer/index.html",
+      "!**/renderer/index.js",
       "!.vscode",
       "!.github",
       "!README.md",
       "!SECURITY.md",
-      "!webpack.config.js",
+      "!vite.config.js",
       "!test",
       "!scripts",
       "!resources",
       "!babel.config.js",
       "!tsconfig.json",
       "!jest.config.js",
-      "!src/**/*.ts"
+      "!src/**/*.ts",
+      "!.prettierignore",
+      "!.prettierrc",
+      "!.nvmrc"
     ],
     "win": {
-      "icon": "build/images/asterisk.ico",
+      "icon": "build/images/asterisk@256x256.ico",
       "target": [
         "portable"
       ],
@@ -99,7 +107,7 @@
       "executableArgs": [
         "asterisk"
       ],
-      "icon": "build/images/asterisk.icns",
+      "icon": "build/images/asterisk@128x128.icns",
       "category": "utils"
     },
     "appImage": {

@@ -1,0 +1,14 @@
+// Range
+
+.range {
+  &::-webkit-slider-thumb {
+    appearance: none;
+    border: 0.3125em solid white;
+    background: #fff;
+    border-radius: 100%;
+    box-shadow: 0 0.0625rem 0.5rem #00000040;
+    cursor: grab;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.titlebar {
+  display: flex;
+  height: 1.875rem;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+.titlebar__data {
+  align-items: center;
+  display: flex;
+  margin: 0 0 0 10px;
+}
+
+.titlebar__title {
+  color: #333;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  margin: 0 0 0 5px;
+  user-select: none;
+}
+
+.titlebar__icon {
+  height: 1.125rem;
+  user-select: none;
+  width: 1.125rem;
+}
+
+.titlebar__btn-group {
+  display: flex;
+  -webkit-app-region: no-drag;
+}
+
+.titlebar__btn {
+  align-items: center;
+  background: transparent;
+  border: none;
+  display: flex;
+  height: 1.875rem;
+  justify-content: center;
+  width: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .titlebar {
+    background: $dark-bg-primary;
+  }
+
+  .titlebar__title {
+    color: $dark-fg;
+  }
+
+  .titlebar__minimize {
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+}
+

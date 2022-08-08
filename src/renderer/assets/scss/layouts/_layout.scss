@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.layout {
+  display: grid;
+  grid-template-areas: 'header header' 'main   main';
+  grid-template-columns: 32.75rem auto;
+  grid-template-rows: 2.1875rem 341px auto;
+}
