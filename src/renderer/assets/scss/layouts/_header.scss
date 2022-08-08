@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.header {
+  background: $light-bg;
+  border-top: 1px solid rgba(0, 0, 0, 0.13);
+  display: flex;
+  grid-area: header;
+  justify-content: flex-end;
+}
+
+@media (prefers-color-scheme: dark) {
+  .header {
+    background: $dark-bg-primary;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+}

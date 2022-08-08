@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.select-locale {
+  height: 1.125rem;
+  overflow: hidden;
+  width: 2.1875rem;
+}
+
+.select-locale--mouse-enter {
+  height: 3.125rem;
+  position: absolute;
+  right: 5.5rem;
+  top: 2.5rem;
+  overflow: initial;
+}
+
+.select-locale__option {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-locale__option--reverse {
+  flex-direction: column-reverse;
+}
+
+.select-locale__btn {
+  background: $light-bg;
+}
+
+@media (prefers-color-scheme: dark) {
+  .select-locale__btn {
+    background: $dark-bg-primary;
+  }
+}

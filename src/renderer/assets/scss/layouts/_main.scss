@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+.main {
+  align-items: center;
+  background: $light-bg;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  grid-area: main;
+  justify-content: center;
+}
+
+.main__body {
+  border-radius: 0.3125rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.149);
+  height: 12.5rem;
+  width: 26.25rem;
+}
+
+.main__title {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  color: $light-fg;
+  cursor: default;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.625rem 0.625rem 0;
+  padding: 0 0 0.625rem;
+  user-select: none;
+}
+
+.main__buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0.625rem 0.625rem 0;
+}
+
+.main__radios {
+  display: grid;
+  gap: 0.875rem;
+  grid-template-rows: repeat(3, auto);
+  width: 12.5rem;
+}
+
+.main__checkboxes {
+  display: grid;
+  gap: 0.875rem;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+}
+
+.main__tools {
+  display: flex;
+  flex-direction: column;
+  margin: 0.1875rem 0.625rem 0rem;
+}
+
+.main__range {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.main__label {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin: 0.1875rem 0 0;
+  user-select: none;
+}
+
+.main__generate-btn {
+  background: $asterisk;
+  border-radius: 1.25rem;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  height: 1.875rem;
+  width: 6.4375rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+    background: $dark-bg-primary;
+  }
+  .main__body {
+    background: $dark-bg-secondary;
+  }
+  .main__title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    color: $dark-fg;
+  }
+}

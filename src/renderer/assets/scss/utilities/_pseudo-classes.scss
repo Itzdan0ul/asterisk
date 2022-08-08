@@ -1,0 +1,22 @@
+// Titlebar
+.titlebar__btn {
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+    transition: 0.7s ease;
+  }
+}
+
+.titlebar__btn--close {
+  &:hover {
+    background: #b64f4f;
+    transition: 0.7s ease;
+  }
+}
+
+// Menu
+.menu__button--help {
+  &:hover {
+    box-shadow: 0 0 0 0.15rem #0167bc80;
+    transition: 0.3s ease;
+  }
+}

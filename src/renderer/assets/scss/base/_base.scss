@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+body {
+  background: $light-bg;
+  color: $light-fg;
+  font-family: Manrope;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $dark-bg-primary;
+    color: $dark-fg;
+  }
+}

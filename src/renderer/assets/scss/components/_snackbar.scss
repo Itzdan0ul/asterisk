@@ -1,0 +1,19 @@
+.snackbar {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.1875rem;
+  bottom: 0.625rem;
+  display: flex;
+  height: 1.875rem;
+  justify-content: center;
+  left: 35%;
+  position: fixed;
+  width: 10rem;
+  z-index: 1;
+}
+
+.snackbar__text {
+  color: #fff;
+  font-size: 0.75em;
+  user-select: none;
+}

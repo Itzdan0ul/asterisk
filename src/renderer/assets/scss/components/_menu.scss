@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.menu {
+  background: $light-bg;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.menu__body {
+  align-items: center;
+  display: flex;
+  gap: 0.625rem;
+  margin: 0 0.625rem 0 0;
+}
+
+.menu__button {
+  background: transparent;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.menu__button--help {
+  background: #0167bc;
+  border-radius: 6.25rem;
+  margin: 0 0.625rem 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu {
+    background: $dark-bg-primary;
+  }
+}

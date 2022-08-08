@@ -1,0 +1,7 @@
+// Titlebar
+
+.titlebar__btn--close {
+  &:hover svg > path {
+    fill: #fff;
+  }
+}
