@@ -13,6 +13,7 @@ class Window extends BrowserWindow {
       width: 524,
       maximizable: false,
       resizable: false,
+      frame: platform() === 'linux' ? false : true,
       titleBarStyle: 'hidden',
       icon: new Icon().setIconPerOS(platform() as 'win32' | 'linux' | 'darwin'),
       webPreferences: {
@@ -21,7 +22,8 @@ class Window extends BrowserWindow {
         webgl: false,
         spellcheck: false,
         v8CacheOptions: 'none',
-        devTools: true,
+        devTools: process.env.NODE_ENV === 'development' ? true : false,
+        sandbox: false,
       },
     });
 
