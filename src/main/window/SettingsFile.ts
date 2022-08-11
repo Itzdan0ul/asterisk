@@ -7,10 +7,15 @@ class SettingsFile {
 
   constructor() {
     if (!fs.existsSync(this.FILE_PATH)) {
+      const dirPath: string = path.join(app.getPath('appData'), 'asterisk');
       const settigs: {} = {
         theme: nativeTheme.themeSource,
         locale: app.getLocale(),
       };
+
+      if (process.env.NODE_ENV === 'development') {
+        fs.mkdirSync(dirPath, { recursive: true });
+      }
 
       fs.writeJsonSync(this.FILE_PATH, settigs, { spaces: 2 });
     }
