@@ -25,7 +25,10 @@
     "desktop",
     "password-generator"
   ],
-  "author": "Itzdan0ul",
+  "author": {
+    "name": "Itzdan0ul",
+    "email": "itzdan.ul@tutanota.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Itzdan0ul/asterisk/issues"
@@ -107,7 +110,7 @@
       "executableArgs": [
         "asterisk"
       ],
-      "icon": "build/images/asterisk@128x128.icns",
+      "icon": "build/images/asterisk@256x256.icns",
       "category": "utils"
     },
     "appImage": {
